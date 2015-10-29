@@ -1,0 +1,44 @@
+section#stats
+    p Feuille d'Aventure
+    table
+        tbody
+            tr
+                td
+                    img(src="/images/points_endurance.png")
+                td
+                    p  #{joueur.enduranceRestant} / #{joueur.enduranceTotal}
+            tr
+                td
+                    img(src="/images/points_habilete.png")
+                td
+                    p #{joueur.habilete}
+            tr
+                td
+                    img(src="/images/pieces_or.png")
+                td
+                    p #{joueur.pieceDOr} / #[span#endurance_total 50]
+    div
+        p Disciplines Kai
+        ul#disciplines
+            each d in joueur.disciplines
+                li #{d}
+
+    p
+        a.button(href="#sacADos") Sac à dos
+    div#sacADos
+        a#fermerSacADos(href="#")
+        img(src="/images/backpack.png")
+        div
+            div
+                p Objets
+                ul
+                    each d in joueur.equipement
+                        li #{d}
+
+            div
+                p Objets Spéciaux
+                ul
+                    if ( joueur.objetSpecial !== undefined)
+                        each d in joueur.objetSpecial
+                            li #{d}
+

@@ -1,0 +1,86 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/creationJoueur.css")
+
+block content
+    img(src="/images/loup_solitaire.png")
+
+    section
+        h1 Création du personnage
+        form(action="/creationJoueur" method="post")
+            p(class="erreur")#messageErreurDiscipline= messageErreurDiscipline
+            fieldset
+                legend Disciplines
+                p Choisir 5 disciplines:
+                div#gauche
+                    label
+                        input(type="checkbox" id="camouflage" name="disciplines" value= disciplines.CAMOUFLAGE)
+                        | Le #{disciplines.CAMOUFLAGE}
+                    label
+                        input(type="checkbox" id="chasse" name="disciplines" value= disciplines.CHASSE)
+                        | La #{disciplines.CHASSE}
+                    label
+                        input(type="checkbox" id="sixiemeSens" name="disciplines" value= disciplines.SIXIEME_SENS )
+                        | #{disciplines.SIXIEME_SENS}
+                    label
+                        input(type="checkbox" id="orientation" name="disciplines" value= disciplines.ORIENTATION )
+                        | L'#{disciplines.ORIENTATION}
+                    label
+                        input(type="checkbox" id="guerison" name="disciplines" value= disciplines.GUERISON )
+                        | La #{disciplines.GUERISON}
+                div#droite
+                    label
+                        input(type="checkbox" id="maitriseArmes" name="disciplines" value= disciplines.MAITRISE_DES_ARMES )
+                        | La #{disciplines.MAITRISE_DES_ARMES}
+                    label
+                        input(type="checkbox" id="bouclierPsychique" name="disciplines" value= disciplines.BOUCLIER_PSYCHIQUE )
+                        | #{disciplines.BOUCLIER_PSYCHIQUE}
+                    label
+                        input(type="checkbox" id="puissancePsychique" name="disciplines" value=disciplines.PUISSANCE_PSYCHIQUE )
+                        | #{disciplines.PUISSANCE_PSYCHIQUE}
+                    label
+                        input(type="checkbox" id="communicationAnimale" name="disciplines" value=disciplines.COMMUNICATION_ANIMALE )
+                        | #{disciplines.COMMUNICATION_ANIMALE}
+                    label
+                        input(type="checkbox" id="maitrisePsychiqueMatiere" name="disciplines" value=disciplines.MAITRISE_PSYCHIQUE_DE_LA_MATIERE )
+                        | #{disciplines.MAITRISE_PSYCHIQUE_DE_LA_MATIERE}
+            p(class="erreur")#messageErreurEquipement= messageErreurEquipement
+            fieldset
+                legend Équipement
+                p Choisir 2 items:
+                div
+                    label
+                        input(type="checkbox" id="epee" name="equipement" value= equipement.EPEE )
+                        | #{equipement.EPEE} (Arme)
+                    label
+                        input(type="checkbox" id="sabre" name="equipement" value= equipement.SABRE )
+                        | #{equipement.SABRE} (Arme)
+                    label
+                        input(type="checkbox" id="lance" name="equipement" value= equipement.LANCE)
+                        | #{equipement.LANCE} (Arme)
+                    label
+                        input(type="checkbox" id="masseArme" name="equipement" value= equipement.MASSE_D_ARMES)
+                        | #{equipement.MASSE_D_ARMES} (Arme)
+                    label
+                        input(type="checkbox" id="marteauGuerre" name="equipement" value= equipement.MARTEAU_DE_GUERRE)
+                        | #{equipement.MARTEAU_DE_GUERRE} (Arme)
+                    label
+                        input(type="checkbox" id="hache" name="equipement" value= equipement.HACHE)
+                        | #{equipement.HACHE} (Arme)
+                    label
+                        input(type="checkbox" id="baton" name="equipement" value= equipement.BATON)
+                        | #{equipement.BATON} (Arme)
+                    label
+                        input(type="checkbox" id="glaive" name="equipement" value= equipement.GLAIVE)
+                        | #{equipement.GLAIVE} (Arme)
+                    label
+                        input(type="checkbox" id="giletCuir" name="equipement" value= equipement.GILET_DE_CUIR_MATELASSE)
+                        | #{equipement.GILET_DE_CUIR_MATELASSE} (Objet Spécial)
+                    label
+                        input(type="checkbox" id="potionLampsur" name="equipement" value= equipement.POTION_DE_LAMPSUR)
+                        | #{equipement.POTION_DE_LAMPSUR} (Objet dans le sac à dos)
+                    label
+                        input(type="checkbox" id="rationSpecial" name="equipement" value= equipement.RATIONS_SPECIALES)
+                        | #{equipement.RATIONS_SPECIALES} (Objet dans le sac à dos)
+            input.button(type="submit" value="Commencer la partie!")
